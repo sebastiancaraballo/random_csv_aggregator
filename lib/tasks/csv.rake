@@ -8,4 +8,8 @@ namespace :csv do
   task task2: :environment do
     CsvDataAggregator.new.task2
   end
+  desc 'task3: iris'
+  task task3: :environment do
+    IrisDataAggregator.new.task3
+  end
 end

@@ -10,4 +10,5 @@
 ## Available Tasks Commands
 - `rake csv:task1`
 - `rake csv:task2`
+- `rake csv:task3`
 

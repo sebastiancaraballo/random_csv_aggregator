@@ -7,7 +7,9 @@ class CsvDataAggregator
   POSSIBLE_VALUES = ['NO COMPRO','COMPRO'].freeze
   MODO_PAGO = ['DEBITO','CREDITO'].freeze
 
-  attr_reader :csv_path, :task1_path, :task2_path, :headers, :new_rows
+  attr_reader :csv_path,
+              :task1_path, :task2_path,
+              :headers, :new_rows
 
   def initialize
     @csv_path = 'public/file.txt'
@@ -19,12 +21,14 @@ class CsvDataAggregator
   end
 
   def task1
+    # Copy existing data
     CSV.open(task1_path, "w", {:col_sep => "\t"}) do |new_file|
       CSV.foreach(csv_path, "r", {:col_sep => "\t"}) do |original_row|
         new_file << original_row
       end
     end
    
+    # Add additional random data
     CSV.open(task1_path, "a", {:col_sep => "\t"}) do |new_file|
       new_rows.times { new_file << headers.map { |column| POSSIBLE_VALUES.sample } }
     end
