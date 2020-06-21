@@ -12,4 +12,8 @@ namespace :csv do
   task task3: :environment do
     IrisDataAggregator.new.task3
   end
+  desc 'task4: empresas'
+  task task4: :environment do
+    CompanyDataAggregator.new.task4
+  end
 end
