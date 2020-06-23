@@ -16,4 +16,11 @@ namespace :csv do
   task task4: :environment do
     CompanyDataAggregator.new.task4
   end
+  desc 'task5: text'
+  task task5: :environment do
+    TextDataAggregator.new.task5
+  end
+  task task6: :environment do
+    TextDataAggregator.new.task6
+  end
 end
